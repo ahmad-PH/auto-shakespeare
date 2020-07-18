@@ -1,51 +1,46 @@
 
-# SuperMario - UTAP Spring98
+# AutoShakespeare
 
-This is a minimal, c++ implementation of the famous and nostalgic game [SuperMario](https://supermariobros.io/), which was chosen as a course project for the Advanced Programming course of the Computer Engineering major of [University of Tehran](https://ut.ac.ir/en), on the 2019 spring semester. 
-As a teaching assistant for this course who was in charge of designing this assignment, I had the duty of writing the code that was expected of the students, in order to make sure that the project was neither too big, nor too small. Moreover, it would help bring out all those small ambiguities earlier, that would otherwise be discovered only after the students had started working on the project, and thus help save both the TAs and students significant amounts of time. The repository would also be shown to the students as an example of a "good-enough" design to help guide them towards better designs.
+This program generates shakespear-style text from a piece of starting text that you provide. This is a pytorch implementation of the tensorflow tutorial on [generating text with an RNN](https://www.tensorflow.org/tutorials/text/text_generation).
 
-This project is built using the [RSDL](https://github.com/UTAP/RSDL) (Ramtin's Simple DirectMedia Layer) library, which is a library developed to help students use the [SDL](https://www.libsdl.org/) library through a simpler and more object-oriented interface. 
 
-Here's a short video that shows how my implementation actually looks like:
+## Usage
+These are the arguments the program can receive:
+```
+       [-h] [--starting_text STARTING_TEXT] [--output_size OUTPUT_SIZE]
+       [--use_pretrained {none,rnn,gru,lstm}]
+       [--recurrent_module {rnn,gru,lstm}] [--dropout DROPOUT]
 
-<a href="https://www.youtube.com/watch?v=bezN955K194" target="_blank">
-  <img src="https://img.youtube.com/vi/bezN955K194/0.jpg" alt="Mario Play-through" border="10"/>
-</a>
+optional arguments:
+  -h, --help            show this help message and exit
+  --starting_text STARTING_TEXT, -s STARTING_TEXT
+                        piece of text used as starting point for generation
+  --output_size OUTPUT_SIZE, -o OUTPUT_SIZE
+                        length of text to generate (in characters)
+  --use_pretrained {none,rnn,gru,lstm}
+                        which pretrained model to use?
+  --recurrent_module {rnn,gru,lstm}, -r {rnn,gru,lstm}
+                        type of recurrent module used for training
+  --dropout DROPOUT, -d DROPOUT
+                        how much dropout to use for training (between 0 and 1)
+```
 
-## Getting Started
-
-To play this game, you need to do the typical steps for running any c-based project.
-First, either clone the repository or simply download its ZIP and then extract it. Then, enter the extracted directory, and run the following to create the executable (named maio.out):
-```
-make
-```
-Then, you can play the game using the command below:
-```
-./mario.out
-```
-The game currently has only one level, and it will default to that one level if you run the executable as shown above. If you create a new level and you want to play it, then you must run
-```
-./mario.out <level-file-address>
-```
+If `--use_pretrained` is not `none`, then a new model will be trained before generation begins, otherwise the specified pre-trained model is used.
 
 ## Dependencies
-* SDL2
-  * SDL2 Image Loading Library
-  * SDL2 Mixer Library
-  * SDL2 TrueType Font Library
-  
-you can refer to [this](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/index.php) page for installation instructions. if you are using linux and have the `apt` package manager available, you can run the following command to install the dependencies:
+
 ```
-sudo apt-get install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev 
+* PyTorch - 1.5
+* matplotlib - 3.2
+* numpy - 1.18
 ```
+
+The versions provided above are those the program was tested with. It is probably not at all dependent on these specific versions, since the features it uses are pretty basic.
 
 ## Authors
 
-* **Ahmad Pourihosseini** - *wrote the source code* - [ahmad-PH](https://github.com/ahmad-PH)
-* **Farzad Habibi** - *helped with writing the assignment description* - [gsoosk](https://github.com/gsoosk)
-* **Amirhossein Habibvand** - *helped with writing the assignment description* - [amirhbv](https://github.com/amirhbv)
-* **Bardia Eghbali** - *helped with writing the assignment description* - [sadmanbrad](https://github.com/sadmanbrad)
+* **Ahmad Pourihosseini** -  [ahmad-PH](https://github.com/ahmad-PH)
 
 ## Acknowledgments
 
-* All the assets in this project were picked from the two websites: [mariouniverse](http://www.mariouniverse.com/) and [themushroomkingdom](https://themushroomkingdom.net/wav.shtml).
+* The idea of this project is inspired by the tensorflow tutorial on [generating text with an RNN](https://www.tensorflow.org/tutorials/text/text_generation) and that is also were the dataset is downloaded from.
