@@ -104,7 +104,9 @@ That meat fit in it.
 MENENIUS:
 A lay our good word, that is as enemy
 ```
-It can be seen that all three models have a solid understanding of the structure of a play: they keep creating blocks of text which are preceded by the name of the speaker in all-capitals (except when there's a title instead of a name, in which case it is merely capitalized). Also, most of the sentences are grammatical. But, since the model is character-based, it hasn't understood the meaning of words, and as a result most sentences are semantically incorrect.
+It can be seen that all three models have a solid understanding of the structure of a play: they keep creating blocks of text which are preceded by the name of the speaker in all-capitals (except when there's a title instead of a name, in which case it is merely capitalized). Also, most of the sentences are grammatical. But, since the model is character-based, it hasn't understood the meaning of words, and as a result most sentences are semantically incorrect. 
+
+It can also be observed that the first few sentences are always memorized from the dataset, but as the model progress onwards, it starts becoming more spontaneous and generates novel sentences of its own.
 
 ## Authors
 
