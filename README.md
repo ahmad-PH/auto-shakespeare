@@ -1,7 +1,7 @@
 
 # AutoShakespeare
 
-This program generates shakespear-style text from a piece of starting text that you provide. This is a pytorch implementation of the tensorflow tutorial on [generating text with an RNN](https://www.tensorflow.org/tutorials/text/text_generation).
+This program generates shakespear-style text from a piece of starting text that you provide. This is a pytorch implementation of the tensorflow tutorial on [generating text with an RNN](https://www.tensorflow.org/tutorials/text/text_generation). The `shakespeare.txt` file is used as the dataset for training.
 
 
 ## Usage
