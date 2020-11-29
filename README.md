@@ -26,7 +26,7 @@ optional arguments:
                         how much dropout to use for training (between 0 and 1)
 ```
 
-If `--use_pretrained` is not `none`, then a new model will be trained before generation begins, otherwise the specified pre-trained model is used.
+If `--use_pretrained` is `none`, then a new model will be trained before generation begins, otherwise the specified pre-trained model is used.
 
 ## Dependencies
 
